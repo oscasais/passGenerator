@@ -1,0 +1,7 @@
+{
+  "name": "pass-generator",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
