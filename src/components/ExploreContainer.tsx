@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './ExploreContainer.css';
-import { IonButton, IonGrid, IonRow, IonCol, IonCard, IonLabel, IonInput, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonIcon } from '@ionic/react';
+import { IonButton, IonGrid, IonRow, IonCol, IonCard, IonCardSubtitle, IonLabel, IonInput, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonIcon } from '@ionic/react';
 import { lockClosed, lockOpen } from 'ionicons/icons';
 import passHash from 'pass-hash-generator';
 
@@ -54,10 +54,11 @@ const ExploreContainer: React.FC<ContainerProps> = ({ currentMode }) => {
         <IonCard>
           <IonCardHeader>
             <IonCardTitle>Master password</IonCardTitle>
+            <IonCardSubtitle>Insert a text that you like to use to calculate the passwords</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent>
             <IonItem>
-              <IonInput autocomplete="off" autofocus={true} type={isPassVisible ? 'text' : 'password'} placeholder="Insert a text that you like to use to calculate the passwords" value={masterPass} onIonChange={e => setMasterPass(e.detail.value!)}></IonInput>
+              <IonInput autocomplete="off" autofocus={true} type={isPassVisible ? 'text' : 'password'} placeholder="Master password" value={masterPass} onIonChange={e => setMasterPass(e.detail.value!)}></IonInput>
               <IonButton shape="round" fill="outline" color={isPassVisible ? 'danger' : 'medium'} onClick={e => { setIsPassVisible(!isPassVisible) }}>
                 <IonIcon slot="icon-only" icon={isPassVisible ? lockOpen : lockClosed} />
               </IonButton>
